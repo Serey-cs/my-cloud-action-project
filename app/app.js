@@ -1,18 +1,17 @@
-import chai from 'chai';
-import chaiHttp from 'chai-http';
-import app from '../app/app.js';
+// app/app.js
+import express from 'express';
 
-chai.use(chaiHttp);
-const expect = chai.expect;
+const app = express();
+const port = 3000;
 
-describe('GET /', function () {
-  it('should return hello message', function (done) {
-    chai.request(app)
-      .get('/')
-      .end((err, res) => {
-        expect(res).to.have.status(200);
-        expect(res.text).to.equal('Hello, GitHub Actions!');
-        done();
-      });
-  });
+app.get('/', (req, res) => {
+  res.send('Hello, GitHub Actions!');
 });
+
+if (import.meta.url === `file://${process.argv[1]}`) {
+  app.listen(port, () => {
+    console.log(`App listening at http://localhost:${port}`);
+  });
+}
+
+export default app;
