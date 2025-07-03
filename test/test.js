@@ -1,4 +1,3 @@
-// test/test.js
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const app = require('../app');
@@ -12,7 +11,7 @@ describe('GET /', function () {
       .get('/')
       .end(function (err, res) {
         expect(res).to.have.status(200);
-        expect(res.text).to.equal('Hello, GitHub Actions!');
+        expect(res.text).to.equal('Hello, GitHub Actions Updated!');
         done();
       });
   });
