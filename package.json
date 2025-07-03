@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "My GitHub Actions Project",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "test": "mocha"
   },

@@ -1,18 +1,18 @@
-const express = require('express');
-const app = express();
-const port = 3000;
+import chai from 'chai';
+import chaiHttp from 'chai-http';
+import app from '../app/app.js';
 
-app.get('/', (req, res) => {
-  // Send the updated greeting message here
-  res.send('Hello, GitHub Actions Updated!');
-});
+chai.use(chaiHttp);
+const expect = chai.expect;
 
-// Only start the server if this file is run directly (not required by tests)
-if (require.main === module) {
-  app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
+describe('GET /', function () {
+  it('should return hello message', function (done) {
+    chai.request(app)
+      .get('/')
+      .end((err, res) => {
+        expect(res).to.have.status(200);
+        expect(res.text).to.equal('Hello, GitHub Actions!');
+        done();
+      });
   });
-}
-
-// Export app for testing purposes
-module.exports = app;
+});
