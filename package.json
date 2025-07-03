@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Serey-cs/my-cloud-action-project#readme",
   "dependencies": {
-    "chai": "^5.2.0",
+    "chai": "^4.5.0",
     "express": "^5.1.0",
     "mocha": "^11.7.1"
   }
