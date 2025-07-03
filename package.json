@@ -1,0 +1,25 @@
+{
+  "name": "cloud-action",
+  "version": "1.0.0",
+  "description": "My GitHub Actions Project",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Serey-cs/my-cloud-action-project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Serey-cs/my-cloud-action-project/issues"
+  },
+  "homepage": "https://github.com/Serey-cs/my-cloud-action-project#readme",
+  "dependencies": {
+    "chai": "^5.2.0",
+    "express": "^5.1.0",
+    "mocha": "^11.7.1"
+  }
+}
