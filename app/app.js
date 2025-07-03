@@ -12,5 +12,5 @@ if (require.main === module) {
     console.log(`App listening at http://localhost:${port}`);
   });
 }
-
+res.send('Hello, GitHub Actions Updated!');
 module.exports = app;
